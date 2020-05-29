@@ -1,0 +1,30 @@
+def sortingthing(arr):
+    while(True):
+        n=0
+        t=0
+        while(t<len(arr)-1):
+            if(arr[t]>arr[t+1]):
+                arr[t],arr[t+1]=arr[t+1],arr[t]
+                n+=1
+            t+=1
+        if(n==0):
+            break
+    return arr
+            
+def shapiro(n):
+    n=sortingthing(n)
+    s=0
+    for i in n:
+       s=s+i
+    xs=s/len(n)
+    s2=0
+    for i in n:
+        s2+=pow((i-xs),2)
+    a=[0.4734,0.3211,0.2565,0.2085,0.1686,0.1334,0.1013,0.0711,0.0422,0.0140]
+    k=0
+    b=0
+    while(k<len(n)/2):
+        b+= a[k]*(n[len(n)-k-1]-n[k])
+        k+=1
+    w=pow(b,2)/s2
+    return w

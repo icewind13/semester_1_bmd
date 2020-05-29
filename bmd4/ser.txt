@@ -1,0 +1,10 @@
+def ser(n):
+    s=0
+    for i in n:
+       s=s+i
+    xs=s/len(n)
+    s2=0
+    for i in n:
+        s2+=pow((i-xs),2)
+        s2/=len(n)
+    return xs,s2
